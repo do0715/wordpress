@@ -1,15 +1,15 @@
-resource "aws_eip" "doyun_eip_pria" {
+resource "aws_eip" "doyun_eip_puba" {
  #instance = aws_instance.web.id
   vpc      = true
 }
-resource "aws_eip" "doyun_eip_pric" {
+resource "aws_eip" "doyun_eip_pubc" {
  #instance = aws_instance.web.id
   vpc      = true
 }
 
 
 resource "aws_nat_gateway" "doyun_ngw_pria" {
-  allocation_id = aws_eip.doyun_eip_pria.id
+  allocation_id = aws_eip.doyun_eip_puba.id
   subnet_id     = aws_subnet.doyun_puba.id
 
   tags = {
@@ -22,7 +22,7 @@ resource "aws_nat_gateway" "doyun_ngw_pria" {
 }
 
 resource "aws_nat_gateway" "doyun_ngw_pric" {
-  allocation_id = aws_eip.doyun_eip_pric.id
+  allocation_id = aws_eip.doyun_eip_pubc.id
   subnet_id     = aws_subnet.doyun_pubc.id
 
   tags = {

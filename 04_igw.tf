@@ -5,7 +5,8 @@ resource "aws_internet_gateway" "doyun_ig" {
     Name = "doyun-ig"
   }
 }
-
+/*
 output "vpc-id" {
     value = aws_vpc.doyun_vpc.id  
 }
+*/
