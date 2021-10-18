@@ -27,21 +27,9 @@ resource "aws_security_group" "doyun_allow_http" {
       security_groups   =   null
       prefix_list_ids   =   null
       self              =   null    
-    }#,
-    /*{
-      description      = "mysql from VPC"
-      from_port        = 3306
-      to_port          = 3306
-      protocol         = "tcp"
-      #cidr_blocks      = [aws_vpc.doyun_vpc.cidr_block]
-      cidr_blocks      = ["0.0.0.0/0"]
-      ipv6_cidr_blocks = ["::/0"]
-      security_groups   =   null
-      prefix_list_ids   =   null
-      self              =   null    
-    }*/
+    }
   ]
-
+/*
 egress = [
     {
       from_port        = 0
@@ -55,7 +43,7 @@ egress = [
       description       =   null
     }
   ]
-
+*/
   tags = {
     Name = "doyun-allow-httpd-ssh"
   }

@@ -16,7 +16,7 @@ resource "aws_instance" "web_1" {
   availability_zone = "ap-northeast-2a"
   private_ip = "192.168.0.11"
   subnet_id = aws_subnet.doyun_puba.id
-  /*user_data = <<-eof
+  user_data =<<-eof
                 #!/bin/bash
                 sudo su -
                 yum install -y httpd
@@ -25,11 +25,11 @@ resource "aws_instance" "web_1" {
                 end
                 systemctl start httpd
                 eof
-                */
-  user_data = file("./install1.sh")
+                
+  #user_data = file("install1.sh")
 
   tags = {
-    Name = "web"
+    Name = "web-1"
   }
   
   root_block_device {
